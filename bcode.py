@@ -45,27 +45,26 @@ def read_barcodes_from_file(file_path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate barcodes and combine them into a single image.")
+    parser = argparse.ArgumentParser(
+        description="Generate barcodes and combine them into a single image."
+    )
 
     parser.add_argument(
         "codes",
         metavar="CODES",
         type=str,
         nargs="*",
-        help="List of barcode numbers to generate (supports alphanumeric)."
+        help="List of barcode numbers to generate (supports alphanumeric).",
     )
     parser.add_argument(
-        "-f",
-        "--file",
-        type=str,
-        help="File containing barcode numbers (one per line)."
+        "-f", "--file", type=str, help="File containing barcode numbers (one per line)."
     )
     parser.add_argument(
         "-o",
         "--output",
         type=str,
         default="combined_barcodes.png",
-        help="Output image file name (default: combined_barcodes.png)."
+        help="Output image file name (default: combined_barcodes.png).",
     )
 
     args = parser.parse_args()
