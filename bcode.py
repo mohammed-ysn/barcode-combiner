@@ -81,7 +81,8 @@ def main():
         return
 
     # Generate and combine barcode images
-    create_barcode_image(codes, args.output)
+    ordered_unique_codes = list(dict.fromkeys(codes))
+    create_barcode_image(ordered_unique_codes, args.output)
 
 
 if __name__ == "__main__":
